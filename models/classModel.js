@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const footballerSchema = new mongoose.Schema(
+const classSchema = new mongoose.Schema(
   {
     className: { require: true, type: String },
     roomNumber: { require: true, type: String }
@@ -7,4 +7,5 @@ const footballerSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("class", footballerSchema);
+const classModel = mongoose.model("class", classSchema);
+export default classModel;

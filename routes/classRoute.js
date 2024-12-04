@@ -1,11 +1,22 @@
 import express from "express";
-import {
-  createClass,
-  getClassById,
-} from "../controllers/classController.js";
-const router = express.Router();
 
-router.post("/create", createClass);
-router.get("/:id", getClassById);
+import createClass from "../controllers/classController.js";
+import getClassById  from "../controllers/classController.js";
+import deleteClass from "../controllers/classController.js";
+import updateClass from "../controllers/classController.js";
+import getallClass from "../controllers/classController.js";
 
-export default router;
+
+const classrouter = express.Router();
+
+classrouter.post("/create/class", createClass);
+classrouter.get("/class", getallClass);
+classrouter.get("/get/:id", getClassById);
+classrouter.delete("/delete/:id", deleteClass);
+classrouter.put("/update/:id", updateClass);
+
+
+
+
+
+export default classrouter;
